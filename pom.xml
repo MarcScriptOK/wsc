@@ -7,7 +7,7 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.force.api</groupId>
-  <artifactId>force-wsc</artifactId>
+  <artifactId>SalesforceJavaIntegration</artifactId>
   <packaging>jar</packaging>
   <version>60.1.1</version>
   <name>force-wsc</name>
@@ -39,6 +39,20 @@
     </mailingList>
   </mailingLists>
   <dependencies>
+    <dependency>
+      <groupId>com.sforce</groupId>
+      <artifactId>my-library</artifactId>
+      <version>1.0</version>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/src/test/resources/WSDL files/enterprise.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>com.sforce</groupId>
+      <artifactId>my-library2</artifactId>
+      <version>1.0</version>
+      <scope>system</scope>
+      <systemPath>${project.basedir}/src/test/resources/WSDL files/force-wsc-60.1.1-uber.jar</systemPath>
+    </dependency>
     <dependency>
       <groupId>org.antlr</groupId>
       <artifactId>ST4</artifactId>
@@ -75,6 +89,13 @@
       <groupId>commons-beanutils</groupId>
       <artifactId>commons-beanutils</artifactId>
       <version>1.9.4</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>7.9.0</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
   <build>
@@ -193,7 +214,6 @@
         <version>3.2.0</version>
         <configuration>
           <source>1.8</source>
-          <target>1.8</target>
           <doclint>none</doclint>
           <additionalJOption>-Xdoclint:none</additionalJOption>
         </configuration>
